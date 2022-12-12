@@ -1,0 +1,1 @@
+import{_ as t,o as e,c as o}from"./index.adac60c0.js";const r={},c={class:"text-center text-danger"};function n(s,a,_,d,p,f){return e(),o("h1",c," Error 404 - Page Not Found ")}const i=t(r,[["render",n]]);export{i as default};
