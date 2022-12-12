@@ -27,3 +27,8 @@ npm run dev
 ```sh
 npm run build
 ```
+### Deploy to gh pages
+[Link](https://dev.to/shashannkbawa/deploying-vite-app-to-github-pages-3ane)
+
+### GitPages
+[Link](https://kriz1618.github.io/vue-spa-app/)
