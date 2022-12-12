@@ -48,7 +48,11 @@ export default {
         return;
       }
 
-      this.searchVal = search;
+      if (this.searchVal != search) {
+        this.searchVal = search;
+        this.offset = 0;
+      }
+
       this.loading = true;
 
       const res = await fetch(
@@ -57,6 +61,10 @@ export default {
       const { data, pagination } = await res.json();
       this.stickers = data;
       this.total = pagination.total_count;
+
+      if (this.total < this.limit) {
+        this.next = false;
+      }
 
       setTimeout(() => {
         this.loading = false;

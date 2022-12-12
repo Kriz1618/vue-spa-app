@@ -48,6 +48,12 @@ export default {
 
         return;
       }
+
+      if (this.gifSearch != search) {
+        this.offset = 0;
+        this.gifSearch = search;
+      }
+
       this.loading = true;
 
       const res = await fetch(
@@ -57,6 +63,10 @@ export default {
       const { data, pagination } = await res.json();
       this.gifs = data;
       this.total = pagination.total_count;
+
+      if (this.total < this.limit) {
+        this.next = false;
+      }
 
       setTimeout(() => {
         this.loading = false;
